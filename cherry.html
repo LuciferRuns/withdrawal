@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cherry's Servers</title>
+    <style>
+        body {
+            background: url('https://files.catbox.moe/fgtei5.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 20px;
+            padding-top: 60px; 
+        }
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #cc0000;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .button-container a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .button-container a:hover {
+            text-decoration: underline;
+        }
+        
+        .skull {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff0000; /* Red color */
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            transition: opacity 0.3s ease-out;
+        }
+        .skull.hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">Cherry's Vault</div>
+        <div class="button-container">
+            <a href="https://discord.gg/larping" class="button">larping</a>
+            <a href="https://discord.gg/bapomet" class="button">baphomet</a>
+            <a href="https://discord.gg/fleet" class="button">fleet</a>
+            <a href="https://discord.gg/needle" class="button">needle</a>
+            <a href="https://discord.gg/leena" class="button">leena</a>
+            <a href="https://discord.gg/withdrawal" class="button">withdrawal</a>
+            <a href="https://discord.gg/e-date" class="button">e-ate</a>
+            <a href="https://discord.gg/grave" class="button">grave</a>
+        </div>
+    </div>
+
+    <script>
+       
+        document.addEventListener('mousemove', (e) => {
+            const skull = document.createElement('div');
+            skull.className = 'skull';
+            skull.style.left = `${e.pageX}px`; // Align with cursor
+            skull.style.top = `${e.pageY}px`; // Align with cursor
+            document.body.appendChild(skull);
+            setTimeout(() => {
+                skull.classList.add('hidden'); // Fade out
+                setTimeout(() => skull.remove(), 300); // Remove after fade out
+            }, 10);
+        });
+    </script>
+</body>
+</html>

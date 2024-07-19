@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>withdrawal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url('https://files.catbox.moe/fgtei5.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .top-link {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            padding: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .top-link a {
+            color: #ff0000;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .top-link a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        .profile {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .profile-pic-nachash {
+            width: 200px;
+            height: 200px;
+        }
+        .profile-pic-cherry, .profile-pic-lovestar {
+            width: 120px;
+            height: 120px;
+        }
+        .username {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+        .social-links a {
+            color: #ff0000;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 20px;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        .social-links .discord {
+            color: #ff0000; 
+        }
+        .youtube-player {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 56.25vw; 
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+            z-index: 1000;
+        }
+        .overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .profile-button {
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .profile-button:hover {
+            background-color: #cc0000;
+        }
+        
+        .skull {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff0000; 
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            transition: opacity 0.3s ease-out;
+        }
+        .skull.hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="overlay" class="overlay">
+        Click Me
+    </div>
+
+    <div class="top-link">
+        <a href="https://discord.gg/withdrawal" target="_blank">Discord Server</a>
+    </div>
+
+    <div class="container">
+        <div class="profile profile-left">
+            <img src="https://files.catbox.moe/pr1gio.gif" alt="Cherry Profile Picture" class="profile-pic profile-pic-cherry">
+            <div class="username">Cherry</div>
+            <div class="social-links">
+                <a href="https://t.me/egirlinformant" target="_blank">Telegram</a>
+                <a href="https://doxbin.com/user/cherry" target="_blank">Doxbin</a>
+            </div>
+            <button class="profile-button" onclick="window.location.href='https://nachash.w3spaces.com/cherry.html'">Servers</button>
+        </div>
+
+        <div class="profile profile-center">
+            <img src="https://i.pinimg.com/564x/b0/bf/b6/b0bfb6469c2ed03f21ea04487f7a9bcc.jpg" alt="Nachash Profile Picture" class="profile-pic profile-pic-nachash">
+            <div class="username">Nach</div>
+            <div class="social-links">
+                <p class="discord">Discord: _nachash</p>
+                <a href="https://doxbin.com/user/nach" target="_blank">Doxbin</a>
+                <a href="https://t.me/a_34773892" target="_blank">Telegram</a>
+            </div>
+        </div>
+
+        <div class="profile profile-right">
+            <img src="https://i.pinimg.com/564x/6b/00/be/6b00beaaf602e106b1050a369a5728f8.jpg" alt="Lovestar Profile Picture" class="profile-pic profile-pic-lovestar">
+            <div class="username">Lovestar</div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/lovestar1k/?hl=en" target="_blank">Instagram</a>
+                <a href="https://soundcloud.com/lovestarxo" target="_blank">SoundCloud</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="youtube-player">
+        <iframe id="youtube-player" src="https://www.youtube.com/embed/cNUB1wroUYY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function playVideo() {
+            const player = document.getElementById('youtube-player');
+            player.src += "&autoplay=1";
+            
+            document.getElementById('overlay').classList.add('hidden');
+        }
+
+        
+        document.getElementById('overlay').addEventListener('click', () => {
+            document.getElementById('overlay').classList.add('hidden');
+            playVideo();
+        });
+
+        
+        document.addEventListener('mousemove', (e) => {
+            const skull = document.createElement('div');
+            skull.className = 'skull';
+            skull.style.left = `${e.pageX}px`;
+            skull.style.top = `${e.pageY}px`; 
+            document.body.appendChild(skull);
+            setTimeout(() => {
+                skull.classList.add('hidden');
+                setTimeout(() => skull.remove(), 300); 
+            }, 10);
+        });
+    </script>
+</body>
+</html>
